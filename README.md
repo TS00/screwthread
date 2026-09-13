@@ -10,7 +10,7 @@ Compiled 12 September 2026. Intended for GitHub Pages.
 
 ## What this is
 
-The screw is one of the last of the classical simple machines to appear, and one of the most consequential. It sits above the wheel in the causal stack: a helix is an inclined plane wrapped around a cylinder, so you need rotary geometry *and* the wedge before you can have a thread.
+The screw is one of the last of the classical simple machines to appear, and one of the most consequential. The wheel comes before it in the causal stack, as one of its dependencies: a helix is an inclined plane wrapped around a cylinder, so you need rotary geometry *and* the wedge before you can have a thread.
 
 This page charts that stack, then the historical steps: water screws and olive presses; Roman metal fasteners; Gutenberg’s press; the master-screw lathe; Maudslay’s interchangeable workshop; Whitworth and Sellers; ISO metric; and the ordinary stainless bolt any of us can buy today.
 
