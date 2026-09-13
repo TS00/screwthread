@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Helix That Holds the World Together — a history of the screw thread</title>
+<meta name="description" content="A visual history of the screw thread, from the geometry of the helix to the ordinary bolt in your hand. The screw sits above the wheel in the causal stack of technology.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4efe6;
+  --paper:#fffdf8;
+  --ink:#1a1612;
+  --muted:#5e574e;
+  --line:#e4dcc8;
+  --rule:#cfc3ab;
+  --bronze:#9a5424;
+  --bronze-2:#c4783a;
+  --iron:#3a4a56;
+  --olive:#3e5a32;
+  --steel:#5a6e7a;
+  --soft:#efe8d8;
+  --soft-2:#e7eedf;
+  --motion:#3e5a32;
+  --fasten:#9a5424;
+  --precision:#1f4d6e;
+  --standard:#6b3d7a;
+  --disputed:#8a6a18;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+  font-family:"Source Serif 4",Georgia,"Iowan Old Style",serif;
+  font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.mono,code,.year,.eyebrow,.nav a,.pill,.kicker,.legend,.filter button,.src,.foot-meta{
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+h1,h2,h3{font-family:"Fraunces","Source Serif 4",Georgia,serif;font-weight:700;letter-spacing:-.02em;line-height:1.12;margin:0}
+h1{font-size:clamp(2.4rem,6vw,4.4rem);max-width:18ch}
+h2{font-size:clamp(1.6rem,3vw,2.15rem);margin:0 0 .35em;padding-bottom:.35em;border-bottom:1px solid var(--rule)}
+h3{font-size:1.15rem;margin:0 0 .35em}
+a{color:var(--bronze);text-decoration:none;border-bottom:1px solid rgba(154,84,36,.3)}
+a:hover{border-bottom-color:var(--bronze)}
+.wrap{max-width:1180px;margin:0 auto;padding:36px 28px 80px}
+.lede{font-size:1.18rem;color:var(--muted);max-width:42em;margin:.7em 0 1.4em}
+.eyebrow{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  padding:5px 10px;border:1px solid var(--rule);border-radius:99px;background:var(--paper)}
+.kicker{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--bronze);font-weight:500;margin-bottom:8px}
+section{margin:72px 0;scroll-margin-top:16px}
+section .intro{max-width:42em;color:var(--muted);margin:.3em 0 1.4em}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+  border-bottom:1px solid var(--rule);padding-bottom:12px;margin-bottom:36px;font-size:.75rem;color:var(--muted)}
+.nav a{color:var(--muted);border:0}
+.nav a:hover{color:var(--bronze)}
+.nav .links a{margin:0 6px}
+.pill{padding:3px 9px;border:1px solid var(--rule);border-radius:99px;background:var(--paper)}
+.pill b{color:var(--bronze);font-weight:600}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;margin-bottom:8px}
+.helix-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px 16px 10px;position:relative;overflow:hidden}
+.helix-card svg{width:100%;height:auto;display:block}
+.caption{font-size:.78rem;color:var(--muted);margin:8px 4px 4px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0 8px}
+.stat{background:var(--paper);border:1px solid var(--line);padding:16px 16px 14px;border-radius:8px;position:relative}
+.stat .num{font-family:"Fraunces",serif;font-size:1.85rem;font-weight:700;letter-spacing:-.03em;line-height:1}
+.stat .num small{font-size:.5em;font-weight:500;color:var(--muted);margin-left:3px}
+.stat .label{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.stat .ctx{font-size:.86rem;margin-top:6px;line-height:1.35}
+.stat .bar{position:absolute;top:0;left:0;width:32px;height:3px;background:var(--bronze)}
+.stat:nth-child(2) .bar{background:var(--iron)}
+.stat:nth-child(3) .bar{background:var(--olive)}
+.stat:nth-child(4) .bar{background:var(--steel)}
+
+.callout{border-left:3px solid var(--bronze);background:var(--soft);padding:14px 18px;margin:18px 0;border-radius:0 8px 8px 0}
+.callout.q{font-style:italic}
+.callout .src{display:block;margin-top:6px;font-size:.75rem;color:var(--muted);font-style:normal}
+
+/* stack */
+.stack{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.layers{display:flex;flex-direction:column;gap:6px}
+.layer{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px 16px;display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:center}
+.layer .n{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze)}
+.layer b{display:block;font-family:"Fraunces",serif;font-size:1.05rem}
+.layer p{margin:2px 0 0;color:var(--muted);font-size:.9rem}
+.layer.active{border-color:var(--bronze);background:linear-gradient(180deg,#fff7ee,var(--paper));box-shadow:0 0 0 1px rgba(154,84,36,.15)}
+.layer.active .n{color:var(--bronze)}
+
+/* geometry */
+.geo{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px 18px 12px}
+.panel h3{font-size:1.05rem;margin-bottom:.2em}
+.panel p{color:var(--muted);font-size:.95rem;margin:.3em 0 .6em}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.kind{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px 18px 16px}
+.kind .tag{display:inline-block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:99px;margin-bottom:8px}
+.kind.motion .tag{background:var(--soft-2);color:var(--motion);border:1px solid #c5d4b8}
+.kind.fasten .tag{background:#f6e6d8;color:var(--fasten);border:1px solid #e4c4a8}
+.kind p{color:var(--muted);margin:.4em 0 0}
+
+/* timeline */
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 18px}
+.filter button{font-size:.78rem;padding:5px 11px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:99px;cursor:pointer}
+.filter button:hover{background:var(--soft)}
+.filter button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.78rem;color:var(--muted);margin:0 0 18px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:99px;margin-right:5px;vertical-align:-1px}
+.rail{position:relative;padding-left:0}
+.era{margin:0 0 28px}
+.era-h{display:flex;align-items:baseline;gap:12px;margin:0 0 10px}
+.era-h .when{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--bronze)}
+.era-h h3{font-size:1.35rem}
+.beats{position:relative;margin-left:18px;padding-left:28px;border-left:2px solid var(--rule)}
+.beats::before{content:"";position:absolute;left:-7px;top:0;bottom:0;width:12px;
+  background-image:repeating-linear-gradient(-28deg,transparent,transparent 7px,var(--bronze) 7px,var(--bronze) 9px);
+  opacity:.55;mask-image:linear-gradient(#000,transparent)}
+.beat{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:14px 16px 14px;margin:0 0 10px}
+.beat::before{content:"";position:absolute;left:-36px;top:18px;width:10px;height:10px;border-radius:99px;background:var(--bronze);border:2px solid var(--bg);box-shadow:0 0 0 2px var(--bronze)}
+.beat[data-kind="motion"]::before{background:var(--motion);box-shadow:0 0 0 2px var(--motion)}
+.beat[data-kind="fasten"]::before{background:var(--fasten);box-shadow:0 0 0 2px var(--fasten)}
+.beat[data-kind="precision"]::before{background:var(--precision);box-shadow:0 0 0 2px var(--precision)}
+.beat[data-kind="standard"]::before{background:var(--standard);box-shadow:0 0 0 2px var(--standard)}
+.beat .top{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:baseline;margin-bottom:4px}
+.year{font-size:.78rem;color:var(--bronze);font-weight:500}
+.beat h4{font-family:"Fraunces",serif;font-size:1.05rem;margin:0;font-weight:700}
+.beat p{margin:.25em 0 0;color:var(--ink);font-size:.95rem}
+.beat .note{color:var(--muted);font-size:.86rem;margin-top:6px}
+.flag{display:inline-block;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:99px;border:1px solid;margin-left:6px;vertical-align:2px}
+.flag.disputed{color:var(--disputed);border-color:#e0d0a0;background:#f8f1d8}
+.flag.thin{color:var(--muted);border-color:var(--rule);background:var(--soft)}
+.beat.hide{display:none}
+
+/* profiles */
+.profiles{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.prof{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px 10px 10px;text-align:center}
+.prof svg{width:100%;height:88px}
+.prof b{display:block;font-family:"Fraunces",serif;font-size:.95rem;margin-top:4px}
+.prof span{display:block;font-size:.78rem;color:var(--muted);margin-top:2px}
+
+/* bolt */
+.bolt-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px;align-items:start}
+.layers-bolt{display:flex;flex-direction:column;gap:8px}
+.bl{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.bl .yr{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze)}
+.bl b{display:block;font-family:"Fraunces",serif}
+.bl p{margin:3px 0 0;color:var(--muted);font-size:.9rem}
+
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+.tbl{background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:14px 0}
+thead th{text-align:left;padding:10px 12px;font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);background:var(--soft)}
+td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.mono{font-size:.82rem}
+
+footer{margin-top:64px;border-top:1px solid var(--rule);padding-top:22px;color:var(--muted);font-size:.88rem}
+footer h3{font-size:1rem;color:var(--ink);margin-bottom:.4em}
+footer ul{padding-left:18px}
+.foot-meta{font-size:.75rem;margin-top:16px}
+
+@media (max-width:920px){
+  .hero,.stack,.geo,.bolt-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .profiles{grid-template-columns:1fr 1fr}
+  .two{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .wrap{padding:22px 16px 60px}
+  .stats{grid-template-columns:1fr}
+  .profiles{grid-template-columns:1fr 1fr}
+  .era-h{flex-direction:column;gap:2px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="nav">
+  <span>research / screw-thread</span>
+  <span class="links">
+    <a href="#stack">stack</a>
+    <a href="#geometry">geometry</a>
+    <a href="#timeline">timeline</a>
+    <a href="#bootstrap">bootstrap</a>
+    <a href="#profiles">profiles</a>
+    <a href="#bolt">the bolt</a>
+    <a href="#sources">sources</a>
+  </span>
+  <span class="pill">compiled <b>12 Sep 2026</b></span>
+</nav>
+
+<header class="hero">
+  <div>
+    <span class="eyebrow">A causal history of a simple machine</span>
+    <h1>The helix that holds the world together</h1>
+    <p class="lede">
+      The screw thread is almost as foundational as the wheel, and it sits above the wheel
+      in the causal chain. A helix is an inclined plane wrapped around a cylinder.
+      You cannot have one until you already have rotary geometry <i>and</i> the wedge.
+      Pick up an ordinary stainless bolt and that whole stack is in your hand: ISO-metric,
+      rolled not cut, its grandparents an olive press and a clock.
+    </p>
+  </div>
+  <div class="helix-card">
+    <svg viewBox="0 0 420 320" role="img" aria-label="A helix unrolled into an inclined plane, then wrapped back around a cylinder to make a screw.">
+      <defs>
+        <linearGradient id="cyl" x1="0" x2="1">
+          <stop offset="0" stop-color="#c4a57a"/>
+          <stop offset=".5" stop-color="#f4ead6"/>
+          <stop offset="1" stop-color="#b08958"/>
+        </linearGradient>
+        <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#9a5424"/></marker>
+      </defs>
+      <rect x="0" y="0" width="420" height="320" fill="#fffdf8"/>
+      <polygon points="36,258 186,258 186,96" fill="#efe8d8" stroke="#cfc3ab"/>
+      <path d="M36,258 L186,96" fill="none" stroke="#9a5424" stroke-width="3.2"/>
+      <circle cx="36" cy="258" r="3.5" fill="#9a5424"/>
+      <circle cx="186" cy="96" r="3.5" fill="#9a5424"/>
+      <text x="111" y="292" text-anchor="middle" fill="#5e574e" font-family="IBM Plex Mono,monospace" font-size="11">inclined plane</text>
+      <path d="M202,176 L268,176" fill="none" stroke="#9a5424" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text x="235" y="166" text-anchor="middle" fill="#9a5424" font-family="IBM Plex Mono,monospace" font-size="10">wrap</text>
+      <clipPath id="cylclip">
+        <rect x="292" y="74" width="92" height="172"/>
+      </clipPath>
+      <ellipse cx="338" cy="74" rx="46" ry="15" fill="url(#cyl)" stroke="#a07d4e"/>
+      <rect x="292" y="74" width="92" height="172" fill="url(#cyl)"/>
+      <ellipse cx="338" cy="246" rx="46" ry="15" fill="#c4a57a" stroke="#a07d4e"/>
+      <g clip-path="url(#cylclip)" fill="none" stroke-linecap="round">
+        <path d="M384,86 C338,94 338,94 292,102 M384,118 C338,126 338,126 292,134 M384,150 C338,158 338,158 292,166 M384,182 C338,190 338,190 292,198 M384,214 C338,222 338,222 292,230" stroke="#c4a08a" stroke-width="2.1" stroke-dasharray="3.5 4"/>
+        <path d="M292,70 C338,78 338,78 384,86 M292,102 C338,110 338,110 384,118 M292,134 C338,142 338,142 384,150 M292,166 C338,174 338,174 384,182 M292,198 C338,206 338,206 384,214 M292,230 C338,238 338,238 384,246" stroke="#9a5424" stroke-width="3.3"/>
+      </g>
+      <ellipse cx="338" cy="74" rx="46" ry="15" fill="none" stroke="#a07d4e"/>
+      <text x="338" y="292" text-anchor="middle" fill="#5e574e" font-family="IBM Plex Mono,monospace" font-size="11">helix</text>
+    </svg>
+    <p class="caption">Hero of Alexandria, 1st century CE: the screw is an inclined plane wrapped around a cylinder.</p>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><span class="bar"></span>
+    <div class="num">~2,400<small> yrs</small></div>
+    <div class="label">As a machine</div>
+    <div class="ctx">Water screws and presses from the Hellenistic world. The geometry is older than the fastener.</div>
+  </div>
+  <div class="stat"><span class="bar"></span>
+    <div class="num">~500<small> yrs</small></div>
+    <div class="label">As a common fastener</div>
+    <div class="ctx">Clocks and presses in the 1400s. Nails did the joining until machines made metal screws cheap enough to use by the boxful.</div>
+  </div>
+  <div class="stat"><span class="bar"></span>
+    <div class="num">1841</div>
+    <div class="label">First national standard</div>
+    <div class="ctx">Whitworth’s 55° thread. Before that, a nut from Birmingham would not fit a bolt from Manchester.</div>
+  </div>
+  <div class="stat"><span class="bar"></span>
+    <div class="num">1<small> object</small></div>
+    <div class="label">The whole stack</div>
+    <div class="ctx">An ordinary M8 stainless bolt is ISO metric, 60° Sellers, rolled, hex-headed, and self-locking. All of it, at once.</div>
+  </div>
+</div>
+
+<section id="stack">
+  <div class="kicker">01 — causal order</div>
+  <h2>Why the screw sits above the wheel</h2>
+  <p class="intro">
+    Technology is a stack. Each layer is illegal until the one below it exists.
+    The wheel gives you rotation. The axle constrains it. The cylinder is the geometry
+    of that rotation. The inclined plane is a different primitive: the wedge, the ramp, the chisel.
+    Wrap the plane around the cylinder and you get a helix. That is the screw.
+    It could not have come first.
+  </p>
+  <div class="stack">
+    <div class="layers">
+      <div class="layer"><div class="n">0</div><div><b>Nature already helical</b><p>Vines, tendrils, snail shells, the twist of a growing stem. Romance words for the screw come from Latin <i>vītis</i>, vine: French <i>vis</i>, Italian <i>vite</i>.</p></div></div>
+      <div class="layer"><div class="n">1</div><div><b>Wheel &amp; axle</b><p>Constrained rotation. Without this, there is no cylinder worth wrapping anything around, and no rotary input to convert.</p></div></div>
+      <div class="layer"><div class="n">2</div><div><b>Inclined plane</b><p>The other primitive. A small force over a long distance becomes a large force over a short one. Wedge, ramp, ploughshare.</p></div></div>
+      <div class="layer active"><div class="n">3</div><div><b>Helix / screw</b><p>The plane, wrapped. Rotation becomes translation. A shallow pitch plus friction becomes a lock: the fastener.</p></div></div>
+      <div class="layer"><div class="n">4</div><div><b>Precision screw</b><p>The helix as a measuring instrument. Micrometer, dividing engine, leadscrew. Length from angle.</p></div></div>
+      <div class="layer"><div class="n">5</div><div><b>The screw that cuts screws</b><p>A leadscrew on a lathe cuts more screws, including better leadscrews. Machine tools are a hall of mirrors of threads.</p></div></div>
+      <div class="layer"><div class="n">6</div><div><b>Standard as social technology</b><p>Whitworth, Sellers, ISO. A physical invention is not a civilisation-scale one until any nut fits any bolt of its name.</p></div></div>
+    </div>
+    <div>
+      <div class="callout q">
+        “The screw was one of the last of the simple machines to be invented.”
+        <span class="src">Standard claim in the history of mechanisms — and it is true in a specific sense: last because hardest. A helix is not a shape you stumble into with a hammer.</span>
+      </div>
+      <p class="intro" style="margin-top:0">
+        China, which independently produced the other classical simple machines, did not invent the screw.
+        Jesuit missionaries brought it in the seventeenth century (<i>Hydraulic Methods of the Far West</i>, 1612).
+        Joseph Needham treated this as a genuine absence, not a gap in the record.
+        The helix is not obvious. That is the point.
+      </p>
+      <p class="intro">
+        Two properties fall out of the geometry, and they fork the whole later history:
+      </p>
+      <div class="two">
+        <div class="kind motion">
+          <span class="tag">motion</span>
+          <h3>Rotation → translation</h3>
+          <p>Turn the shaft, the nut advances. Water climbs, a press closes, a lead screw feeds a tool. Pitch is a gear ratio made of metal.</p>
+        </div>
+        <div class="kind fasten">
+          <span class="tag">fastening</span>
+          <h3>Self-locking</h3>
+          <p>If the pitch is shallow enough, friction at the flanks defeats back-driving. The joint stays done up. That is a bolt. It is why you can torque something down and walk away, and expect it to still be tight next year.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="geometry">
+  <div class="kicker">02 — what a thread is</div>
+  <h2>Pitch, flanks, and a lock that is also a motor</h2>
+  <div class="geo">
+    <div>
+      <p class="intro" style="margin-top:0">
+        <b>Pitch</b> is the axial distance from crest to crest. <b>Lead</b> is how far the screw advances in one turn.
+        For a single-start thread they are the same. Mechanical advantage is circumference divided by lead:
+        a fine thread is a long ramp, and a long ramp is a strong one. It is also a lock.
+        Make the ramp too steep (a bottle cap, a multi-start lid) and the helix wants to undo itself.
+        That is a feature when you want the lid off. It is a disaster in a bolt meant to stay tight.
+      </p>
+      <p class="intro">
+        The <b>thread angle</b> is the included angle of the V. Fasteners like 60°: wide roots, strong,
+        plenty of friction. Power screws (jacks, vices, lathe leadscrews) want less friction, so they
+        went square, then Acme at 29°. Pipe threads add a taper so the flanks themselves make the seal.
+      </p>
+      <p class="intro">
+        Handedness is a convention with a muscle underneath it. A right-handed person tightening a
+        right-hand screw uses the stronger supinator of the forearm. Most people are right-handed,
+        so most threads are right-handed. The exceptions are the interesting ones: the left pedal of a
+        bicycle, a gas fitting that must not mate with an oxygen line, a turnbuckle that tightens both ways at once.
+      </p>
+    </div>
+    <div class="panel">
+      <h3>Two jobs, two profiles</h3>
+      <p>The same helix, tuned. Friction is wanted in a bolt and fought in a jack.</p>
+      <svg viewBox="0 0 360 150" aria-hidden="true">
+        <text x="70" y="18" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#5e574e">fastener · 60°</text>
+        <text x="260" y="18" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#5e574e">power · ~29° Acme</text>
+        <path d="M20,120 L55,40 L90,120 L125,40 L160,120" fill="none" stroke="#9a5424" stroke-width="3"/>
+        <path d="M20,120 L160,120" stroke="#cfc3ab" stroke-width="1"/>
+        <path d="M200,120 L228,48 L256,120 L284,48 L312,120 L340,48" fill="none" stroke="#3a4a56" stroke-width="3"/>
+        <path d="M200,120 L340,120" stroke="#cfc3ab" stroke-width="1"/>
+      </svg>
+      <p class="caption">Sharper V cuts and locks. Trapezoid bears load and can be recut as it wears. Romans already had both V and square threads; they just could not make them cheap.</p>
+    </div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="kicker">03 — the steps</div>
+  <h2>A timeline, as far back as it will go</h2>
+  <p class="intro">
+    The honest version of “who invented the screw” is that nobody did, in the Edison sense.
+    A geometry was noticed, then used for water, then for pressure, then for holding two things
+    together, then for measuring, then for making more of itself, then for making all of those
+    interchangeable. Several of the earliest names are traditional. They are marked.
+  </p>
+  <div class="legend">
+    <span><i style="background:var(--motion)"></i> motion</span>
+    <span><i style="background:var(--fasten)"></i> fastening</span>
+    <span><i style="background:var(--precision)"></i> precision / machine tool</span>
+    <span><i style="background:var(--standard)"></i> standard</span>
+  </div>
+  <div class="filter filters">
+    <button class="on" data-f="all">all</button>
+    <button data-f="motion">motion</button>
+    <button data-f="fasten">fastening</button>
+    <button data-f="precision">precision</button>
+    <button data-f="standard">standard</button>
+  </div>
+
+  <div class="rail">
+
+    <div class="era">
+      <div class="era-h"><span class="when">before the record</span><h3>A shape that grows</h3></div>
+      <div class="beats">
+        <div class="beat" data-kind="motion">
+          <div class="top"><span class="year">nature</span><h4>The vine is already a screw</h4></div>
+          <p>A climbing plant traces a helix around a stem because that is how a tip can advance while keeping contact. Snail shells and horns do the same in three dimensions. You do not need to invent the helix. You need to notice it, then cut it on purpose, in a material that is not alive.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="era">
+      <div class="era-h"><span class="when">c. 700 BCE – 250 BCE</span><h3>Water, then theory</h3></div>
+      <div class="beats">
+        <div class="beat" data-kind="motion">
+          <div class="top"><span class="year">c. 700 BCE</span><h4>Sennacherib’s bronze screws? <span class="flag disputed">disputed</span></h4></div>
+          <p>Stephanie Dalley reads a Neo-Assyrian inscription of Sennacherib (r. 704–681 BCE) as describing huge bronze water-raising screws for the terraced garden at Nineveh — which would put the water screw centuries before Archimedes, and in metal. John Peter Oleson is unconvinced: the words do not unambiguously mean “screw,” and there is no archaeological machine. If Dalley is right, the hanging gardens of later Greek memory were at Nineveh, not Babylon, and the screw is Mesopotamian. Treat as an open case, not a foundation.</p>
+        </div>
+        <div class="beat" data-kind="motion">
+          <div class="top"><span class="year">c. 400 BCE</span><h4>Archytas of Tarentum <span class="flag thin">traditional</span></h4></div>
+          <p>Pythagorean, general, friend of Plato, sometimes called the founder of mechanics. Later writers credit him with the screw. There is no surviving device and no contemporary description of a thread. What is solid: by the fourth century BCE, Greek mathematics had the helix as an object of thought, and southern Italy was a place where thought became machines. Archytas is a plausible ceiling on “the Greeks already had the idea,” not a patent.</p>
+        </div>
+        <div class="beat" data-kind="motion">
+          <div class="top"><span class="year">c. 250 BCE</span><h4>Archimedes: water, spirals, the first theory</h4></div>
+          <p>The water screw — a helix inside a cylinder, rotated, lifting water — is the first screw we can actually talk about. Diodorus says Archimedes invented it in Egypt. Posidonius implies he saw Egyptians already using one. Oleson’s conservative position: no literary or archaeological evidence before c. 250 BCE, and the device bears Archimedes’ name for a reason. He also wrote <i>On Spirals</i>. This is the moment the helix becomes a machine with a proof behind it. Egyptians and Romans used it for irrigation, bilge, and mine drainage. Vitruvius, two centuries later, still gives a carpenter’s recipe: eight helical channels, pitched at a 3-4-5 triangle, turned by the treading of men.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="era">
+      <div class="era-h"><span class="when">2nd century BCE – 2nd century CE</span><h3>Presses, taps, and the first metal fasteners</h3></div>
+      <div class="beats">
+        <div class="beat" data-kind="motion">
+          <div class="top"><span class="year">1st–2nd c. BCE</span><h4>The screw press</h4></div>
+          <p>Oil and wine. A wooden V-thread, often enormous, turning against a nut in the frame, converting a man’s shoulders into a constant, controllable pressure that a lever-and-weight press cannot hold as cleanly. Hero describes the evolution of these presses; machines of the same family were still at work in the nineteenth century. A cloth press survived at Herculaneum. A twin-screw press is painted on a wall in Pompeii. Gutenberg will borrow this, unchanged in principle, to put inked type against paper.</p>
+        </div>
+        <div class="beat" data-kind="precision">
+          <div class="top"><span class="year">1st c. CE</span><h4>Hero of Alexandria: definition, and a tap</h4></div>
+          <p>In the <i>Mechanica</i> the screw is one of five things that can “set a load in motion.” Hero states the geometry that this whole page is about: an inclined plane wrapped around a cylinder. He describes how to lay out and cut wooden screws, and a device for cutting an internal thread — a tap. Female threads are the hard part. A bolt you can file. A nut you have to invent a tool for. That tool is already in Alexandria in the first century.</p>
+        </div>
+        <div class="beat" data-kind="fasten">
+          <div class="top"><span class="year">before 79 CE</span><h4>Roman metal threads: jewellery, surgery, a lamp, a wood screw</h4></div>
+          <p>The eruption of Vesuvius is a dating stamp. A travelling lamp from Herculaneum has stacked cylinders joined by male V-threads. Surgical specula from Pompeii open on a metal screw, as they still do. Gold and bronze square threads survive on fibulae and bracelets in London, the Louvre, the Met, Berlin, the Getty. At Silchester, a pointed iron screw 157&nbsp;mm long was found embedded in wood: a Roman wood screw, V-form, about 68° included angle. Sim and Legg’s reconstruction: a smith can forge and file one in about an hour. So the Romans could have made them in quantity. They mostly did not. Nails were cheaper, and a handmade helix is still a luxury. Fastening with a screw is understood. It is not yet a civilisation’s default joint.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="era">
+      <div class="era-h"><span class="when">3rd – 14th centuries</span><h3>The long thin stretch</h3></div>
+      <div class="beats">
+        <div class="beat" data-kind="motion">
+          <div class="top"><span class="year">late antiquity → medieval</span><h4>The idea does not die. It also does not spread.</h4></div>
+          <p>Large wooden screws keep turning in presses — oil, wine, cloth, later paper. The water screw fades in much of Europe by the end of the third century and persists in Visigothic and Islamic Spain; Oleson suggests the Arabs may have brought it back after the eighth century. What does not happen is the thing we now think of as “screws”: a bag of identical metal fasteners. Cutting a helix by hand is still too expensive for that. The stack is waiting on machine tools, and machine tools are waiting on a better screw.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="era">
+      <div class="era-h"><span class="when">15th – 16th centuries</span><h3>Printers, clocks, and a lathe that already knows the trick</h3></div>
+      <div class="beats">
+        <div class="beat" data-kind="motion">
+          <div class="top"><span class="year">c. 1440</span><h4>Gutenberg does not invent the screw press. He aims it at type.</h4></div>
+          <p>Movable type is the famous half. The other half is even pressure, over a plane, repeatable. That is a screw press, already ancient, already used on grapes, olives, cloth, and paper. Gutenberg’s own press does not survive. The earliest picture of a printing press is 1499. Wooden screws give way to metal ones on presses around 1550. The information revolution is downstream of a wine-maker’s helix.</p>
+        </div>
+        <div class="beat" data-kind="fasten">
+          <div class="top"><span class="year">15th c.</span><h4>Clockmakers make the fastener common</h4></div>
+          <p>A clock is a pile of small, serviceable joints. You cannot rivet a movement you expect to take apart. Metal screws — still handmade, still precious — become the joint of precision work. Armourers and instrument makers follow. This is the real beginning of the screw as a fastener in the modern sense, a good century before anyone has a factory for them. Augers and drills, the helix as a way of eating wood and earth, start showing up in European paintings around the same time.</p>
+        </div>
+        <div class="beat" data-kind="precision">
+          <div class="top"><span class="year">1483</span><h4>The Hausbuch lathe: a master screw cutting a screw</h4></div>
+          <p><i>Das Mittelalterliche Hausbuch</i> shows, a little confusedly (the artist draws mixed handedness), a thread-cutting machine with a leadscrew and slide. It is the earliest picture we have of the idea that will build the industrial world: one screw, already believed, guiding the tool that cuts the next. Leonardo sketches screw-cutting lathes and change gears around the same generation, probably without building them. Jacques Besson publishes a screw-cutting lathe in 1569. The bootstrap has started, on paper and in a few workshops, three hundred years before Maudslay.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="era">
+      <div class="era-h"><span class="when">1600 – 1770</span><h3>Theory, a new continent, and the first precision originals</h3></div>
+      <div class="beats">
+        <div class="beat" data-kind="precision">
+          <div class="top"><span class="year">1600</span><h4>Galileo writes down the dynamics</h4></div>
+          <p><i>Le Meccaniche</i> treats the screw with the rest of the simple machines: ideal mechanical advantage, friction as the thing that makes the real machine diverge from the diagram. The lock and the motor are now a calculation, not just a craft rule.</p>
+        </div>
+        <div class="beat" data-kind="motion">
+          <div class="top"><span class="year">1612</span><h4>The screw arrives in China, as a book</h4></div>
+          <p>Sabatino de Ursis and Xu Guangqi publish <i>Hydraulic Methods of the Far West</i>, with Vitruvius’s water screw drawn for a Chinese audience. Later Jesuit instrument-makers (Schreck, Wang Zheng, Verbiest) treat the screw as the sixth simple machine. It is used, where it is used, more for mine drainage than irrigation — Sado Island gold mines in Japan built them by the hundred. The geometry did not arise there. It travelled.</p>
+        </div>
+        <div class="beat" data-kind="fasten">
+          <div class="top"><span class="year">1760</span><h4>Wyatt brothers: wood screws as a factory product</h4></div>
+          <p>British patent 751, Job and William Wyatt of Staffordshire: head the blank, slot it, then cut the thread from a master (tail) screw that advances the spindle. Blunt-ended, parallel-thread iron wood screws, made by a machine. Their mill at Tatenhill was not a commercial triumph, but the direction is set. A wood screw is a self-tapper: it cuts its own nut in the timber. Pointed gimlet tips — so you do not have to drill first — wait until the 1830s–40s.</p>
+        </div>
+        <div class="beat" data-kind="precision">
+          <div class="top"><span class="year">1770</span><h4>Ramsden’s lathe: a small original, a long accurate screw</h4></div>
+          <p>Jesse Ramsden, instrument maker, builds the first really satisfactory screw-cutting lathe and a dividing engine whose tangent worm is a precision screw. Fine threads are how you make sextants, micrometers, and the surveying instruments that lay out canals. The method is already recursive: cut a short screw as well as you can, then use it to cut a longer one. Error averaging is a philosophical idea you can hold in your hand.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="era">
+      <div class="era-h"><span class="when">1795 – 1841</span><h3>The industrial screw, then the first law of threads</h3></div>
+      <div class="beats">
+        <div class="beat" data-kind="precision">
+          <div class="top"><span class="year">1800</span><h4>Maudslay: the combination that stuck</h4></div>
+          <p>Henry Maudslay does not invent the slide rest, the leadscrew, or change gears. Senot in France (1795) and David Wilkinson in Rhode Island (1798) are in the same water. What Maudslay builds is the industrially practical lathe: leadscrew geared to the spindle, tool clamped to a rest that slides on planed ways, change gears for pitch. He then does the social half of the invention inside his own shop: a set of taps and dies, so that any bolt of a given size fits any nut of that size. Interchangeable parts, for fasteners, as a workshop fact. His pupils include Joseph Whitworth and James Nasmyth. The machine-tool industry is a Maudslay family tree.</p>
+        </div>
+        <div class="beat" data-kind="fasten">
+          <div class="top"><span class="year">1834–1846</span><h4>The gimlet point: a wood screw you can start with a push</h4></div>
+          <p>Blunt machine-made screws still wanted a pilot hole. A threaded conical point — the gimlet — lets the screw start itself. Claims tangle among Sloat &amp; Springsteen (US 1837), the Providence Screw Company (1834 is sometimes cited), Cullen Whipple, and J. T. Sloan’s 1846 patent, which specified a point whose thread continues the body pitch. This is the wood screw a carpenter would recognise. Thread rolling, which displaces metal instead of cutting it away, is tried from 1851 and becomes the way almost all fasteners are made in the next century. A rolled thread is stronger: the grain follows the helix.</p>
+        </div>
+        <div class="beat" data-kind="standard">
+          <div class="top"><span class="year">1841</span><h4>Whitworth collects the mongrels and picks 55°</h4></div>
+          <p>Joseph Whitworth, Maudslay-trained, gathers sample screws from British workshops and proposes a law: 55° included angle, rounded crests and roots, and a defined number of threads per inch for each diameter. It becomes British practice in the 1860s, then the Empire’s. The Royal Navy can order an engine from more than one shop. This is the first national screw-thread standard on Earth. The rounded root is kinder to fatigue than a sharp V — a fact that will be borrowed, a century later, into the Unified thread.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="era">
+      <div class="era-h"><span class="when">1864 – 1948</span><h3>A second standard, a war, a merger</h3></div>
+      <div class="beats">
+        <div class="beat" data-kind="standard">
+          <div class="top"><span class="year">1864</span><h4>Sellers: 60°, flat, and easier to cut</h4></div>
+          <p>William Sellers, at the Franklin Institute in Philadelphia, proposes a 60° thread with crests and roots flattened by one-eighth of the pitch. A 60° gauge is a geometry any mechanic can file; Whitworth’s 55° with radiused crests is not. Railroads and the US Navy take it up. It becomes the United States Standard, then National Coarse and Fine. Pipe threads fork here too: Britain’s BSP keeps Whitworth’s 55° (and often a taper to seal); America’s NPT takes Sellers’ 60° and tapers it. Two industrial civilisations, two angles, and a century of adaptors.</p>
+        </div>
+        <div class="beat" data-kind="standard">
+          <div class="top"><span class="year">1876–1894</span><h4>Metric Europe cannot agree with itself either</h4></div>
+          <p>Switzerland’s Thury thread (47.5°, watchmaking, 1876). Germany’s Loewenherz (53° 8′). French and German 60° metric forms eventually dominate the continent. The fastener is now cheap. The argument is about which helix the cheap ones should be.</p>
+        </div>
+        <div class="beat" data-kind="motion">
+          <div class="top"><span class="year">1894</span><h4>Acme: a power thread that a lathe can actually cut</h4></div>
+          <p>Albert Man Powell proposes a 29° trapezoidal thread to replace square threads on travelling parts — vices, jacks, leadscrews. Square threads are efficient and a nuisance to machine. Acme can be cut with a sensible tool, wears in a way you can take up with a split nut, and becomes the power-screw of the machine shop. (Metric countries later get a similar trapezoid as Tr / DIN 103.)</p>
+        </div>
+        <div class="beat" data-kind="fasten">
+          <div class="top"><span class="year">1907 / 1932</span><h4>Robertson, then Phillips: the interface to the helix</h4></div>
+          <p>P. L. Robertson’s square socket (Canada, 1907) cold-forms, holds the bit, and does not cam out. Henry Ford likes it and cannot get a licence on the terms he wants; North America outside Canada mostly does not get it. John P. Thompson’s cruciform patents of 1932, commercialised by Henry Phillips, do the opposite on purpose: they cam out when the screw is home, which is what a power driver on a 1930s car line wants. By 1940 most US screw makers are licensed. WWII is largely Phillips-assembled. The drive is not the thread. It is the last millimetre of the stack: how a human or a motor is allowed to touch the helix.</p>
+        </div>
+        <div class="beat" data-kind="standard">
+          <div class="top"><span class="year">1948</span><h4>Unified: the Allies get tired of not fitting</h4></div>
+          <p>1914–18 made incompatible threads an operational problem. 1939–45 made it a worse one. In 1948 Britain, the United States and Canada agree the Unified Thread Standard: Sellers’ 60° and flat crest, Whitworth’s rounded root for fatigue. Inch countries now share a helix. Metric countries do not. The next fight is the last one.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="era">
+      <div class="era-h"><span class="when">1947 – now</span><h3>A world thread, and the bolt in your hand</h3></div>
+      <div class="beats">
+        <div class="beat" data-kind="standard">
+          <div class="top"><span class="year">1958–1968</span><h4>ISO metric: one profile, millimetres</h4></div>
+          <p>ISO is founded in 1947. Technical Committee 1, Screw threads, is not a side project. ISO/R 68 (1958) sets the basic 60° profile; ISO/R 724 (1968) the metric diameters and pitches. Crests essentially flat, roots rounded, flanks at the angle Sellers picked because it was easy to file. The car industry outside North America, the building trades, and almost every piece of consumer hardware you can buy today speak this language: M8×1.25, M10×1.5. UNC and UNF remain in US customary and a lot of aerospace. The stack is now a standard you can look up.</p>
+        </div>
+        <div class="beat" data-kind="motion">
+          <div class="top"><span class="year">1874 → 1950s</span><h4>Ball screws: take the friction out</h4></div>
+          <p>A conventional leadscrew wastes most of the input on sliding friction, which is also the lock. Put recirculating balls in the nut and you keep the helix’s conversion of rotation to translation, at &gt;90% efficiency, and you can preload out the backlash. Patents from 1874; a Cleveland design in 1898; aircraft in WWII; GM’s Saginaw steering after the war; then every CNC machine. The fastener wants friction. The machine tool, by the twentieth century, wants the other fork.</p>
+        </div>
+        <div class="beat" data-kind="fasten">
+          <div class="top"><span class="year">1967 →</span><h4>Torx, rolling, stainless, the unnoticed present</h4></div>
+          <p>Camcar’s Torx (1967) is a six-lobe drive that neither cams out like Phillips nor waits for a licence like Robertson. Almost all modern fasteners are thread-rolled, not cut: faster, less scrap, fatigue-stronger. Stainless — chromium’s gift — lets a thread live outdoors. Property classes (8.8, 10.9, A2-70) turn a bag of bolts into an engineering specification. None of this is as famous as Archimedes. All of it is why the helix is now boring, which is the highest compliment a technology can be paid.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="bootstrap">
+  <div class="kicker">04 — recursion</div>
+  <h2>You need a screw to make a better screw</h2>
+  <p class="intro">
+    This is the part that makes the screw different from the wheel. A wheel does not help you make a rounder wheel in the same way.
+    A leadscrew does. Ramsden cuts a long screw from a short, careful original. Maudslay’s lathe, whose carriage is driven by a screw,
+    cuts the next leadscrew. Whitworth, later, will scrape surface plates and make measuring machines whose micrometers are screws,
+    so that the next screw can be held to a fraction of a thousandth. The machine-tool industry is this loop, industrialised.
+    Steam engines, railways, clocks, guns with interchangeable locks, and eventually the mill that rolled the last bolt you tightened:
+    all of them sit on a helix that was taught by an older helix.
+  </p>
+  <div class="callout">
+    The causal stack has a strange last step. Once the screw can reproduce itself more accurately than the last generation,
+    accuracy is no longer a craft mystery. It is a breeding programme. That is why 1800 feels like a cliff in this history
+    even though the Hausbuch already knew the move in 1483. Knowing the move is not the same as running it every day,
+    on metal, for sale, in a shop whose nuts fit each other.
+  </p>
+</section>
+
+<section id="profiles">
+  <div class="kicker">05 — the shapes that won</div>
+  <h2>Five profiles, two jobs</h2>
+  <p class="intro">The helix is one idea. The cross-section is a series of arguments about friction, strength, and what a file can do.</p>
+  <div class="profiles">
+    <div class="prof">
+      <svg viewBox="0 0 80 70"><path d="M8,62 L22,10 L36,62 L50,10 L64,62" fill="none" stroke="#9a5424" stroke-width="2.4"/></svg>
+      <b>Sharp V</b><span>cuts, seals, locks. Wood screws, pipe, self-tappers.</span>
+    </div>
+    <div class="prof">
+      <svg viewBox="0 0 80 70"><path d="M6,62 L20,14 L28,14 L40,62 L54,14 L62,14 L74,62" fill="none" stroke="#9a5424" stroke-width="2.4"/></svg>
+      <b>Whitworth 55°</b><span>1841. Rounded crest and root. First national law.</span>
+    </div>
+    <div class="prof">
+      <svg viewBox="0 0 80 70"><path d="M6,62 L22,12 L34,12 L46,62 L62,12 L74,12" fill="none" stroke="#3a4a56" stroke-width="2.4"/></svg>
+      <b>Sellers / ISO 60°</b><span>1864 / 1958. Flat crest, easier to cut. Today’s standard bolt.</span>
+    </div>
+    <div class="prof">
+      <svg viewBox="0 0 80 70"><path d="M10,62 L20,18 L34,18 L34,62 L48,18 L62,18 L62,62" fill="none" stroke="#3e5a32" stroke-width="2.4"/></svg>
+      <b>Square</b><span>Roman motion threads, later jacks. Efficient, miserable to machine.</span>
+    </div>
+    <div class="prof">
+      <svg viewBox="0 0 80 70"><path d="M8,62 L24,20 L40,62 L56,20 L72,62" fill="none" stroke="#3a4a56" stroke-width="2.4"/></svg>
+      <b>Acme 29°</b><span>1894. Power screws, vices, the lathe that cuts the others.</span>
+    </div>
+  </div>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>When</th><th>Who</th><th>Angle</th><th>What it decided</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">Roman</td><td>anonymous smiths</td><td>V and square</td><td>Both jobs already understood. Not cheap.</td></tr>
+        <tr><td class="mono">1841</td><td>Whitworth</td><td>55°, radiused</td><td>First national standard. Empire, Navy, railways.</td></tr>
+        <tr><td class="mono">1864</td><td>Sellers</td><td>60°, flat</td><td>US standard. Easier gauge. Ancestor of ISO and UN.</td></tr>
+        <tr><td class="mono">1948</td><td>UK / US / Canada</td><td>60° + rounded root</td><td>Unified inch thread. Allied hardware finally mates.</td></tr>
+        <tr><td class="mono">1958–68</td><td>ISO TC 1</td><td>60° metric</td><td>World default. M-series. Every modern bolt’s native tongue.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="bolt">
+  <div class="kicker">06 — an object in the hand</div>
+  <h2>What is in an ordinary bolt</h2>
+  <p class="intro">
+    Take a stainless hex-flange bolt of the sort that holds outdoor hardware together: an M8
+    or M10 in A2 or A4 stainless, ISO metric coarse, often with a serrated flange in place of a
+    lock washer. It is not an interesting object, which is the whole achievement. Unpacked, it is a timeline.
+  </p>
+  <div class="bolt-grid">
+    <div class="panel">
+      <svg viewBox="0 0 280 360" role="img" aria-label="Anatomy of a hex flange bolt.">
+        <rect width="280" height="360" fill="#fffdf8"/>
+        <text x="140" y="22" text-anchor="middle" font-family="Fraunces,serif" font-size="16" fill="#1a1612">M8 × 1.25</text>
+        <text x="140" y="40" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="#5e574e">ISO 68 / 724 · A2-70</text>
+        <!-- hex head -->
+        <polygon points="140,58 168,74 168,98 140,114 112,98 112,74" fill="#d9c6a4" stroke="#7a5a32" stroke-width="1.4"/>
+        <polygon points="140,66 156,76 156,92 140,102 124,92 124,76" fill="#efe4ce"/>
+        <!-- flange -->
+        <ellipse cx="140" cy="118" rx="36" ry="8" fill="#c4a57a" stroke="#7a5a32"/>
+        <!-- shank -->
+        <rect x="124" y="118" width="32" height="28" fill="#d9c6a4" stroke="#7a5a32"/>
+        <!-- threads -->
+        <path d="M118,150 L162,156 L118,162 L162,168 L118,174 L162,180 L118,186 L162,192 L118,198 L162,204 L118,210 L162,216 L118,222 L162,228 L118,234 L162,240 L118,246 L162,252 L118,258 L140,262 L140,150 Z" fill="#d9c6a4" stroke="#9a5424" stroke-width="1"/>
+        <path d="M118,156 L162,150 M118,168 L162,162 M118,180 L162,174 M118,192 L162,186 M118,204 L162,198 M118,216 L162,210 M118,228 L162,222 M118,240 L162,234 M118,252 L162,246" stroke="#9a5424" stroke-width="1.2"/>
+        <!-- labels -->
+        <path d="M168,86 L210,86" stroke="#5e574e"/><text x="214" y="90" font-family="IBM Plex Mono,monospace" font-size="10" fill="#5e574e">hex head</text>
+        <path d="M176,118 L210,118" stroke="#5e574e"/><text x="214" y="122" font-family="IBM Plex Mono,monospace" font-size="10" fill="#5e574e">flange</text>
+        <path d="M166,200 L210,118" stroke="none"/>
+        <path d="M166,205 L210,205" stroke="#9a5424"/><text x="214" y="209" font-family="IBM Plex Mono,monospace" font-size="10" fill="#9a5424">60° rolled</text>
+        <text x="140" y="290" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="#5e574e">pitch 1.25 mm · right-hand</text>
+        <text x="140" y="306" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="#5e574e">self-locking under clamp load</text>
+        <text x="140" y="338" text-anchor="middle" font-family="Source Serif 4,serif" font-size="12" fill="#5e574e">the whole stack, in one object</text>
+      </svg>
+    </div>
+    <div class="layers-bolt">
+      <div class="bl"><span class="yr">geometry · 1st c. CE</span><b>Helix as inclined plane</b><p>Hero’s definition. Rotation of the nut (or the bolt) becomes clamp load. Pitch 1.25&nbsp;mm on M8 is a shallow ramp: it locks.</p></div>
+      <div class="bl"><span class="yr">job · Roman / 15th c.</span><b>Fastener, not a press</b><p>The Romans knew this joint. Clockmakers made it ordinary. You are not pressing olives with it. You are holding two parts together, and you expect to be able to undo it years from now.</p></div>
+      <div class="bl"><span class="yr">head · medieval →</span><b>Hexagon</b><p>A wrenchable head is a separate invention from the thread. The flange spreads the load into the part beneath it and, if serrated, bites in as a lock.</p></div>
+      <div class="bl"><span class="yr">profile · 1864 / 1958</span><b>60° ISO metric</b><p>Sellers’ angle, because a 60° gauge is easy to make and check. ISO’s millimetres. Not Whitworth’s 55°. If a Victorian British bolt turned up in the same box, it would not fit, and would be wrong in a way you could measure with a cheap thread gauge.</p></div>
+      <div class="bl"><span class="yr">making · 1851 → 20th c.</span><b>Rolled, not cut</b><p>The blank is squeezed between dies rather than machined. The grain follows the flanks, so it is stronger in fatigue than a cut thread, and cheap enough that nobody counts them. Wyatt’s factory, fulfilled.</p></div>
+      <div class="bl"><span class="yr">material · 20th c.</span><b>A2 / A4 stainless</b><p>A self-healing film of chromium oxide. A carbon-steel helix left outdoors is a brown smear in a few seasons. Stainless is why the ancient geometry can live outside, next to aluminium and copper, without turning into a battery and a stain.</p></div>
+      <div class="bl"><span class="yr">standard · 1968</span><b>A name that fits</b><p>M8×1.25 means the same thing in a factory in Taiwan, a distributor in Halifax, and a workbench in Nova Scotia. That sentence is the Whitworth project, completed. The physical invention was Hellenistic. The civilisation-scale invention is the name.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="kicker">07 — the moral, if there is one</div>
+  <h2>Boring is the goal</h2>
+  <p class="intro">
+    The wheel is famous because it looks like a beginning. The screw is not famous, even though
+    a world of clocks, presses, machine tools, engines, micrometers, and bolted steel is downstream of it,
+    because a good thread disappears into use. You only notice it when the nut from one shop will not
+    take the bolt from another, or when a fastener strips because someone reached for the wrong driver.
+  </p>
+  <p class="intro">
+    The causal chain is the interesting part. No cylinder, no helix. No helix, no press. No press, no printed book
+    of the European kind. No leadscrew, no interchangeable machine parts. No standard, no spare part.
+    No cheap, reliable bolt, and no flat-pack anything you can assemble on a Saturday and trust in a gale.
+    Every layer is still there, in the object. The vine, the wedge, the cylinder, Alexandria, the clockmaker,
+    Maudslay’s taps, Sellers’ 60°, and a rolling die in a factory that will never know your name.
+  </p>
+</section>
+
+<footer id="sources">
+  <h3>Sources</h3>
+  <p>Fuller notes and confidence flags: <a href="SOURCES.md">SOURCES.md</a>. The short list:</p>
+  <ul>
+    <li>Vitruvius, <i>De Architectura</i> 10.6; Hero, <i>Mechanica</i>; Pliny, <i>NH</i> 18.74; Diodorus 1.34.2.</li>
+    <li>Sim &amp; Legg, “Production of Roman Metal Screw Threads,” <i>EXARC</i> 2024/2 (Herculaneum lamp, Silchester wood screw, experimental times).</li>
+    <li>Dalley &amp; Oleson, “Sennacherib, Archimedes, and the Water Screw,” <i>Technology and Culture</i> 44.1 (2003) — disputed Assyrian case.</li>
+    <li>Battison, “Screw-Thread Cutting by the Master-Screw Method Since 1480,” Smithsonian / Gutenberg #31756.</li>
+    <li>Rybczynski, <i>One Good Turn</i> (2000); Wyatt patent 751 (1760); Whitworth 1841; Sellers / Franklin Institute 1864.</li>
+    <li>ISO/R 68:1958, ISO/R 724:1968; ASME landmark on US standard threads; Unified Thread Standard 1948.</li>
+    <li>Needham / Jesuit transmission: de Ursis &amp; Xu Guangqi, 1612; the screw as an import into East Asia.</li>
+  </ul>
+  <p class="foot-meta">
+    research/screw-thread · compiled 12 September 2026 · a single-page infographic, meant for GitHub Pages.
+    Dates are consensus of the sources above; traditional and disputed attributions are marked in the timeline.
+  </p>
+</footer>
+
+</div>
+<script>
+(function(){
+  const buttons = document.querySelectorAll('.filter button');
+  const beats = document.querySelectorAll('.beat');
+  const eras = document.querySelectorAll('.era');
+  buttons.forEach(btn => btn.addEventListener('click', () => {
+    buttons.forEach(b => b.classList.toggle('on', b === btn));
+    const f = btn.getAttribute('data-f');
+    beats.forEach(beat => {
+      beat.classList.toggle('hide', f !== 'all' && beat.getAttribute('data-kind') !== f);
+    });
+    eras.forEach(era => {
+      const any = [...era.querySelectorAll('.beat')].some(b => !b.classList.contains('hide'));
+      era.style.display = any ? '' : 'none';
+    });
+  }));
+})();
+</script>
+</body>
+</html>
