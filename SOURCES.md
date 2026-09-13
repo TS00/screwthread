@@ -30,6 +30,13 @@ A working bibliography for `index.html`. Dates are given as the consensus of the
 - National Screw Thread Commission / NBS reports. US thread history from 1864 through Unified.
 - Fastener industry summaries (Bolt Science; Fastenerdata) for Whitworth, Sellers, Thury (47.5°), Loewenherz (53° 8′), Unified 1948, ISO metric.
 
+## Clockmaking and the cost of a hand-cut thread
+
+- *Clockmaker / clockmaking* (Wikipedia): before 1800 clocks were entirely handmade in one shop; screw threads cut with a die/screw plate and taps; files for shaping.
+- Horopedia, "Screw plates," and Worldtempus, "Where you can't afford to screw up": early watch and clock movements deliberately used **very few screws** — plates were fastened to pillars with tapered pins and wedges, "far easier to manufacture than screws." Many screws only became normal with the 19th-century Lépine calibre, which then drove the first semi-automatic screw machines. This is the key point behind the "designed them out" claim on the page.
+- Glasgow, *Watch and Clock Making* (1891 ed.), via NAWCC: a skilled hand at a lathe could turn out a small bar screw in about **15 seconds** (≈1,800 in a ten-hour day) — used as the "machine-rate" anchor.
+- Sim & Legg, *EXARC* 2024/2: ~1 hour to hand-file a single large Roman-style iron thread — used as the "hand-filing" anchor. Note the two anchors are different objects (large iron thread vs small clock screw); they bound the range rather than measure the same thing.
+
 ## Drive types and later machinery
 
 - P. L. Robertson, Canadian patent 1907 / US 1911 (manufacturing machine). Square internal drive, cold-formed.
@@ -48,6 +55,7 @@ A working bibliography for `index.html`. Dates are given as the consensus of the
 | China independently invented the screw | No. Jesuit transmission in the 17th century. Needham’s “last of the simple machines” point stands. |
 | Maudslay invented the screw-cutting lathe | He did not invent the idea. Senot (1795), Wilkinson (1798), Ramsden (1770), Besson (1569), and the Hausbuch (1483) precede him. He made the industrially practical combination that spread. |
 | Gutenberg invented the screw press | He applied an existing agricultural / paper screw press to movable type. |
+| Threads were most of the labour in an early clock | No, and the page says so. No "hours per clock" figure survives. The defensible point is the inverse: because a hand-cut screw was slow and dear, early movements minimised screws (pins and wedges), and only filled up with them once machines made threads cheap. The "~1 hour to file" and "~15 seconds by machine" figures are order-of-magnitude anchors from different objects, not a measured per-clock breakdown. |
 
 ## Etymology
 
